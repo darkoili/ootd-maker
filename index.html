@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Darko Ilic MatchMaker</title>
+    <style>
+        body {
+            font-family: Aptos, sans-serif;
+            background-color: #87CEFA;
+            line-height: 1.5;
+        }
+            h1 {text-align: center;}
+            h2 {text-align: center;}
+            p {text-align: center;}
+            label {text-align: center;}
+            select {text-align: center;}
+            option {text-align: center;}
+            button {text-align: center;}
+            
+           .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+                        }
+            
+        
+        label {
+            font-family: Aptos, sans-serif;
+            background-color: #87CEFA;
+            line-height: 1;
+        }
+        select {
+            padding: 0.5em 0.5em;
+            appearance: none;
+            color: #87CEFA;
+            border-color: White;
+            background-origin: content-box;
+            background-position: right -1em center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            box-sizing: border-box;
+            padding-right: 1.5em;
+      }
+        option {
+            color: #87CEFA;
+            border-color: White;
+             height: 100%;
+            }
+        
+        h1     {color: White;}
+        h2     {color: White;} 
+        label  {color: White;font-weight: bold;line-height: 1.45}
+        p      {color: White;}
+        
+    </style>
+</head>
+<body>
+    <img src="darko-ilic-matchmaker.png" alt="Darko Ilic Heart" style="float: right;"> <img src="darko-ilic-matchmaker.png" alt="Darko Ilic Heart" style="float: left;">
+    <h2 class="center" style="font-size:3vw">      Darko Ilic's Matchmaker </h2>
+     <h2 class="center"> Instructions:  Respond to the next five statements below using the Strongly Agree, Agree, Neutral, Disagree, or Strongly Disagree dropdown options to quiz your love compatibility to Darko. Once all five options have selected, click on the Calculate Compatibility button to view your compatibility results !
+</h2>
+    <br>
+    
+<label class="center"> Pizza is the greatest food of all time.</label>
+    <br>
+<select id="QuestionOne" class="center" required>
+    <option value="">Select One</option>
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neutral</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly Disagree</option>
+</select>
+    
+    <br>
+<label class="center"> Reading is a fun, relaxing activity.</label>
+    <br>
+    <select id="QuestionTwo" class="center" required>
+    <option value="">Select One</option>
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neutral</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly Disagree</option>
+</select>
+  
+    <br>
+<label class="center"> Roller Coasters are a great and thrilling ammusement park ride.</label>
+    <br>
+    <select id="QuestionThree" class="center" required>
+    <option value="">Select One</option>
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neutral</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly Disagree</option>
+</select>
+    <br>
+<label class="center"> H&M is the best men's wear fashion brand.</label>
+    <br>
+    <select id="QuestionFour" class="center" required>
+    <option value="">Select One</option>
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neutral</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly Disagree</option>
+</select>
+    <br>
+    
+<label class="center"> Hot coffee is better than iced coffee.</label>
+    <br>
+    <select id="QuestionFive" class="center" onchange="error()" required>
+    <option value="">Select One</option>
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neutral</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly Disagree</option>
+</select>
+    
+    <br>
+    <br>
+    
+    <button class="center" onclick="calculateCompatibility()">Calculate Compatibility</button>
+    <p id="compatibility"></p>
+    
+    <p id="compatibilityPhrase"></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+<script>
+   console.log("Darko Ilic MatchMaker");
+
+    function calculateCompatibility() {
+        console.log("calculateCompatibility()");
+
+        const DESIRED_RESPONSE1 = [5];
+        const DESIRED_RESPONSE2 = [5];
+        const DESIRED_RESPONSE3 = [1];
+        const DESIRED_RESPONSE4 = [5];
+        const DESIRED_RESPONSE5 = [4];
+        
+        const MAX_SCORE= 25;
+        
+        let question1Response = document.getElementById("QuestionOne").selectedOptions[0].value;
+        let question2Response = document.getElementById("QuestionTwo").selectedOptions[0].value;
+        let question3Response = document.getElementById("QuestionThree").selectedOptions[0].value;
+        let question4Response = document.getElementById("QuestionFour").selectedOptions[0].value;
+        let question5Response = document.getElementById("QuestionFive").selectedOptions[0].value;
+
+        console.log("Question 1 Answers:")
+        console.log(document.getElementById("QuestionOne").selectedOptions[0].text);
+        console.log(document.getElementById("QuestionOne").selectedOptions[0].value);
+        console.log(question1Response);
+
+        console.log("Question 2 Answers:")
+        console.log(document.getElementById("QuestionTwo").selectedOptions[0].text);
+        console.log(document.getElementById("QuestionTwo").selectedOptions[0].value);
+        console.log(question2Response);
+
+        console.log("Question 3 Answers:")
+        console.log(document.getElementById("QuestionThree").selectedOptions[0].text);
+        console.log(document.getElementById("QuestionThree").selectedOptions[0].value);
+        console.log(question3Response);
+
+        console.log("Question 4 Answers:")
+        console.log(document.getElementById("QuestionFour").selectedOptions[0].text);
+        console.log(document.getElementById("QuestionFour").selectedOptions[0].value);
+        console.log(question4Response);
+
+        console.log("Question 5 Answers:")
+        console.log(document.getElementById("QuestionFive").selectedOptions[0].text);
+        console.log(document.getElementById("QuestionFive").selectedOptions[0].value);
+        console.log(question5Response);
+
+        let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE1[0]);
+        let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE2[0]);
+        let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE3[0]);
+        let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE4[0]);
+        let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE5[0]);
+
+        console.log("a1="+question1Compatibility);
+        console.log("a2="+question2Compatibility);
+        console.log("a3="+question3Compatibility);
+        console.log("a4="+question4Compatibility);
+        console.log("a5="+question5Compatibility);
+
+        let totalCompatibility = question1Compatibility + question2Compatibility + question3Compatibility + question4Compatibility + question5Compatibility;
+
+        totalCompatibility *= 100/ MAX_SCORE;
+        totalCompatability = Math.round(totalCompatibility);
+        console.log("totalCompatibility="+totalCompatibility);
+
+       document.getElementById("compatibility").innerHTML = "Compatibility to Darko is: " + totalCompatibility  + "..........Question summary:" + "..........Question 1 compatability is " + question1Compatibility + "..........Question 2 compatability is " + question2Compatibility + "..........Question 3 compatability is " + question3Compatibility + "..........Question 4 compatability is " + question4Compatibility + "..........Question 5 compatability is " + question5Compatibility;
+    }
+    
+</script>      
+</body>
+</html>
