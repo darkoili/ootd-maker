@@ -61,15 +61,13 @@
      </h2>
 
     
-    <img src="navy-white-color.png" alt="Navy-white-color-scheme" width="500" height="200">>  <label> What do you think on this color palette? </label>
+    <img src="navy-white-color.png" alt="Navy-white-color-scheme" width="400" height="200">  <label> What do you think on this color palette? </label>
        <select id="QuestionOne" class='center">
         <option> Select </option>
-        <option> Love it ! </option>
-        <option> Hate it. </option>
-    <br>
+        <option> Love it !</option>
+        <option> Hate it.</option>
 
-
-    <img src="red-blue-white.png" alt="red-blue-white" width="500" height="200">>  <label> What do you think on this color palette? </label>
+    <img src="red-blue-white.png" alt="red-blue-white" width="400" height="200">  <label> What do you think on this color palette? </label>
         <select id="QuestionTwo" class='center">
          <option> Select </option>
          <option> Love it ! </option>
@@ -78,14 +76,11 @@
 
   
     <br>
+
     
-    <br>
-    <br>
+    <button class="center">Generate my outfit!</button>
+ 
     
-    <button class="center" onclick="calculateCompatibility()">Generate my outfit!y</button>
-    <p id="compatibility"></p>
-    
-    <p id="compatibilityPhrase"></p>
     <br>
     <br>
     <br>
@@ -94,72 +89,7 @@
     <br>
 
     
-<script>
-   console.log("Darko Ilic MatchMaker");
 
-    function calculateCompatibility() {
-        console.log("calculateCompatibility()");
-
-        const DESIRED_RESPONSE1 = [5];
-        const DESIRED_RESPONSE2 = [5];
-        const DESIRED_RESPONSE3 = [1];
-        const DESIRED_RESPONSE4 = [5];
-        const DESIRED_RESPONSE5 = [4];
-        
-        const MAX_SCORE= 25;
-        
-        let question1Response = document.getElementById("QuestionOne").selectedOptions[0].value;
-        let question2Response = document.getElementById("QuestionTwo").selectedOptions[0].value;
-        let question3Response = document.getElementById("QuestionThree").selectedOptions[0].value;
-        let question4Response = document.getElementById("QuestionFour").selectedOptions[0].value;
-        let question5Response = document.getElementById("QuestionFive").selectedOptions[0].value;
-
-        console.log("Question 1 Answers:")
-        console.log(document.getElementById("QuestionOne").selectedOptions[0].text);
-        console.log(document.getElementById("QuestionOne").selectedOptions[0].value);
-        console.log(question1Response);
-
-        console.log("Question 2 Answers:")
-        console.log(document.getElementById("QuestionTwo").selectedOptions[0].text);
-        console.log(document.getElementById("QuestionTwo").selectedOptions[0].value);
-        console.log(question2Response);
-
-        console.log("Question 3 Answers:")
-        console.log(document.getElementById("QuestionThree").selectedOptions[0].text);
-        console.log(document.getElementById("QuestionThree").selectedOptions[0].value);
-        console.log(question3Response);
-
-        console.log("Question 4 Answers:")
-        console.log(document.getElementById("QuestionFour").selectedOptions[0].text);
-        console.log(document.getElementById("QuestionFour").selectedOptions[0].value);
-        console.log(question4Response);
-
-        console.log("Question 5 Answers:")
-        console.log(document.getElementById("QuestionFive").selectedOptions[0].text);
-        console.log(document.getElementById("QuestionFive").selectedOptions[0].value);
-        console.log(question5Response);
-
-        let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE1[0]);
-        let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE2[0]);
-        let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE3[0]);
-        let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE4[0]);
-        let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE5[0]);
-
-        console.log("a1="+question1Compatibility);
-        console.log("a2="+question2Compatibility);
-        console.log("a3="+question3Compatibility);
-        console.log("a4="+question4Compatibility);
-        console.log("a5="+question5Compatibility);
-
-        let totalCompatibility = question1Compatibility + question2Compatibility + question3Compatibility + question4Compatibility + question5Compatibility;
-
-        totalCompatibility *= 100/ MAX_SCORE;
-        totalCompatability = Math.round(totalCompatibility);
-        console.log("totalCompatibility="+totalCompatibility);
-
-       document.getElementById("compatibility").innerHTML = "Compatibility to Darko is: " + totalCompatibility  + "..........Question summary:" + "..........Question 1 compatability is " + question1Compatibility + "..........Question 2 compatability is " + question2Compatibility + "..........Question 3 compatability is " + question3Compatibility + "..........Question 4 compatability is " + question4Compatibility + "..........Question 5 compatability is " + question5Compatibility;
-    }
-    
 </script>      
 </body>
 </html>
